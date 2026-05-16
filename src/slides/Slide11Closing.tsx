@@ -1,12 +1,12 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig, Img, staticFile} from 'remotion';
-import {COLORS, FONTS} from '../constants';
-import {fadeUp, fadeRight, envelope, springPop} from '../animations';
-import {Logo} from '../shared/Logo';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, Img, staticFile } from 'remotion';
+import { COLORS, FONTS } from '../constants';
+import { fadeUp, fadeRight, envelope, springPop } from '../animations';
+import { Logo } from '../shared/Logo';
 
 export const Slide11Closing: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps, durationInFrames} = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const wrap = envelope(frame, durationInFrames);
 
   // "여러분이 바로 그 주인공" — narration hits at ~6s = frame 180
@@ -15,7 +15,7 @@ export const Slide11Closing: React.FC = () => {
 
   return (
     <AbsoluteFill
-      style={{opacity: wrap, background: COLORS.yellow, overflow: 'hidden'}}
+      style={{ opacity: wrap, background: COLORS.yellow, overflow: 'hidden' }}
     >
       <div
         style={{
@@ -97,10 +97,10 @@ export const Slide11Closing: React.FC = () => {
               }}
             >
               {[
-                {n: 1, text: <>로비 <b style={{fontFamily: FONTS.display, fontWeight: 'normal'}}>Signup Sheet</b>에 이름을 적어 주세요.</>},
-                {n: 2, text: <>또는 오른쪽 <b style={{fontFamily: FONTS.display, fontWeight: 'normal'}}>QR 코드를 스캔</b>하세요.</>},
-                {n: 3, text: <>문의 — <b style={{fontFamily: FONTS.display, fontWeight: 'normal'}}>이조이 집사</b> · Kakaotalk <b style={{fontFamily: FONTS.display, fontWeight: 'normal'}}>jolly0717</b></>},
-              ].map(({n, text}, i) => (
+                { n: 1, text: <>로비 <b style={{ fontFamily: FONTS.display, fontWeight: 'normal' }}>Signup Sheet</b>에 이름을 적어 주세요.</> },
+                { n: 2, text: <>또는 오른쪽 <b style={{ fontFamily: FONTS.display, fontWeight: 'normal' }}>QR 코드를 스캔</b>하세요.</> },
+                { n: 3, text: <>문의 — <b style={{ fontFamily: FONTS.display, fontWeight: 'normal' }}>이조이 집사</b> · Kakaotalk <b style={{ fontFamily: FONTS.display, fontWeight: 'normal' }}>jolly0717</b></> },
+              ].map(({ n, text }, i) => (
                 <div
                   key={n}
                   style={{
@@ -130,7 +130,7 @@ export const Slide11Closing: React.FC = () => {
                   >
                     {n}
                   </span>
-                  <span style={{paddingTop: 8}}>{text}</span>
+                  <span style={{ paddingTop: 8 }}>{text}</span>
                 </div>
               ))}
             </div>
@@ -190,7 +190,7 @@ export const Slide11Closing: React.FC = () => {
             >
               <Img
                 src={staticFile('qr-code.png')}
-                style={{width: '100%', height: '100%', objectFit: 'contain'}}
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
             <div
@@ -216,8 +216,6 @@ export const Slide11Closing: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <Logo light />
     </AbsoluteFill>
   );
 };

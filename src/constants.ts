@@ -18,7 +18,7 @@ export const FONTS = {
   display: '"Jua", "Apple SD Gothic Neo", sans-serif',
   heavy: '"Black Han Sans", "Jua", sans-serif',
   body: '"Gowun Dodum", "Apple SD Gothic Neo", system-ui, sans-serif',
-  mono: '"Inter", system-ui, sans-serif',
+  mono: '"Inter", "Gowun Dodum", system-ui, sans-serif',
 } as const;
 
 // Frame durations at 30fps
