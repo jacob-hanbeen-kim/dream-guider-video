@@ -1,19 +1,19 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate} from 'remotion';
-import {COLORS, FONTS} from '../constants';
-import {fadeUp, envelope} from '../animations';
-import {Logo} from '../shared/Logo';
-import {QRCorner} from '../shared/QRCorner';
-import {Eyebrow} from '../shared/Eyebrow';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { COLORS, FONTS } from '../constants';
+import { fadeUp, envelope } from '../animations';
+import { Logo } from '../shared/Logo';
+import { QRCorner } from '../shared/QRCorner';
+import { Eyebrow } from '../shared/Eyebrow';
 
 const BAR_HEIGHTS = [38, 64, 48, 78, 52, 88, 42, 70, 60, 92];
 const BAR_COLORS = [COLORS.yellow, COLORS.coral, COLORS.sky];
 
-const CLAMP = {extrapolateLeft: 'clamp' as const, extrapolateRight: 'clamp' as const};
+const CLAMP = { extrapolateLeft: 'clamp' as const, extrapolateRight: 'clamp' as const };
 
 export const Slide07DataProject: React.FC = () => {
   const frame = useCurrentFrame();
-  const {durationInFrames} = useVideoConfig();
+  const { durationInFrames } = useVideoConfig();
   const wrap = envelope(frame, durationInFrames);
 
   return (
@@ -37,7 +37,7 @@ export const Slide07DataProject: React.FC = () => {
         <Eyebrow
           label="SCENE 07 · DATA PROJECT DAY"
           dotColor={COLORS.sky}
-          style={{...fadeUp(frame, 0, 22)}}
+          style={{ ...fadeUp(frame, 0, 22) }}
         />
 
         {/* Title */}
@@ -55,7 +55,7 @@ export const Slide07DataProject: React.FC = () => {
         >
           데이터로 세상을 읽는 눈,
           <br />
-          <span style={{color: COLORS.sky}}>AI와 함께</span> 키웁니다.
+          <span style={{ color: COLORS.sky }}>AI와 함께</span> 키웁니다.
         </h2>
 
         {/* Data grid */}
@@ -119,7 +119,7 @@ export const Slide07DataProject: React.FC = () => {
             </div>
 
             {/* Caption */}
-            <div style={{position: 'relative', zIndex: 2}}>
+            <div style={{ position: 'relative', zIndex: 2 }}>
               <div
                 style={{
                   color: COLORS.cream,
@@ -131,22 +131,11 @@ export const Slide07DataProject: React.FC = () => {
               >
                 SPECIAL SESSION
               </div>
-              <div
-                style={{
-                  color: COLORS.yellow,
-                  fontFamily: FONTS.display,
-                  fontSize: 56,
-                  letterSpacing: 0,
-                  marginTop: 8,
-                }}
-              >
-                With Dr. Kichun Lee
-              </div>
             </div>
           </div>
 
           {/* Right panels */}
-          <div style={{display: 'flex', flexDirection: 'column', gap: 24}}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div
               style={{
                 ...fadeUp(frame, 50, 78),
