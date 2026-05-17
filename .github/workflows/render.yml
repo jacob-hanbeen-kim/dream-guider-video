@@ -24,18 +24,8 @@ jobs:
       - name: Install Chromium for Remotion
         run: npx remotion browser ensure
 
-      - name: Render H.264 (delivery)
-        run: npx remotion render DreamGuider out/dream-guider.mp4 --codec=h264
-
-      - name: Render ProRes (Premiere Pro editing)
+      - name: Render ProRes
         run: npx remotion render DreamGuider out/dream-guider.mov --codec=prores
-
-      - name: Upload H.264
-        uses: actions/upload-artifact@v4
-        with:
-          name: dream-guider-h264
-          path: out/dream-guider.mp4
-          retention-days: 30
 
       - name: Upload ProRes
         uses: actions/upload-artifact@v4

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, Img, staticFile } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, Img, staticFile, spring } from 'remotion';
 import { COLORS, FONTS } from '../constants';
 import { fadeUp, fadeRight, envelope, springPop } from '../animations';
 import { Logo } from '../shared/Logo';
@@ -12,6 +12,14 @@ export const Slide11Closing: React.FC = () => {
   // "여러분이 바로 그 주인공" — narration hits at ~6s = frame 180
   const heroScale = springPop(frame, fps, 175, 1, 1.05);
   const heroColor = frame >= 175 ? COLORS.coral : COLORS.ink;
+
+  const vbsY = spring({
+    frame: Math.max(0, frame - 145),
+    fps,
+    config: {stiffness: 160, damping: 18, mass: 1},
+    from: 180,
+    to: 0,
+  });
 
   return (
     <AbsoluteFill
@@ -214,6 +222,50 @@ export const Slide11Closing: React.FC = () => {
               SAEHAN SUMMER ACADEMY · 2026
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* VBS banner — peeks up from bottom-right */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 80,
+          transform: `translateY(${vbsY}px)`,
+          background: COLORS.coral,
+          borderRadius: '20px 20px 0 0',
+          border: `3px solid ${COLORS.ink}`,
+          borderBottom: 'none',
+          padding: '28px 44px 32px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 6,
+          zIndex: 20,
+          boxShadow: `-6px -6px 0 ${COLORS.ink}`,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: FONTS.display,
+            fontSize: 38,
+            color: 'white',
+            lineHeight: 1.2,
+            textAlign: 'center',
+          }}
+        >
+          VBS도 많은 신청 바랍니다!
+        </div>
+        <div
+          style={{
+            fontFamily: FONTS.mono,
+            fontSize: 26,
+            letterSpacing: '0.14em',
+            color: 'white',
+            opacity: 0.9,
+          }}
+        >
+          5/28 – 5/30
         </div>
       </div>
     </AbsoluteFill>
