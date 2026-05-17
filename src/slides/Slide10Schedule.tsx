@@ -1,17 +1,17 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, FONTS} from '../constants';
-import {fadeUp, fadeIn, envelope} from '../animations';
-import {Logo} from '../shared/Logo';
-import {QRCorner} from '../shared/QRCorner';
-import {Eyebrow} from '../shared/Eyebrow';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
+import { COLORS, FONTS } from '../constants';
+import { fadeUp, fadeIn, envelope } from '../animations';
+import { Logo } from '../shared/Logo';
+import { QRCorner } from '../shared/QRCorner';
+import { Eyebrow } from '../shared/Eyebrow';
 
 const ROWS = [
-  {color: COLORS.green,  name: 'Eco Challenge',       when: '6/1 · 6/3 · 6/8',                        hrs: '12:30 – 2:30 PM'},
-  {color: COLORS.yellow, name: 'Career Day',           when: '6/10 · 6/15 · 6/17 · 6/22 · 6/24 · 7/6', hrs: '12:30 – 2:30 PM'},
-  {color: COLORS.coral,  name: 'Olympic Day',          when: '6/19 (금)',                               hrs: '10:00 AM – 2:30 PM'},
-  {color: COLORS.sky,    name: 'Water Day',            when: '7/10 (금)',                               hrs: '10:00 AM – 1:30 PM'},
-  {color: COLORS.plum,   name: 'Substitute Teacher',  when: '7/15 – 7/17',                             hrs: '8:30 AM – 2:30 PM'},
+  { color: COLORS.green, name: 'Eco Challenge', when: '6/1 · 6/3 · 6/8', hrs: '12:30 – 2:30 PM' },
+  { color: COLORS.yellow, name: 'Career Day', when: '6/10 · 6/15 · 6/17 · 6/22 · 6/24 · 7/6', hrs: '12:30 – 2:30 PM' },
+  { color: COLORS.coral, name: 'Olympic Day', when: '6/19 (금)', hrs: '10:00 AM – 2:30 PM' },
+  { color: COLORS.sky, name: 'Water Day', when: '7/10 (금)', hrs: '10:00 AM – 2:30 PM' },
+  { color: COLORS.plum, name: 'Substitute Teacher', when: '7/15 – 7/17', hrs: '8:30 AM – 2:30 PM' },
 ];
 
 const ROW_STYLE: React.CSSProperties = {
@@ -23,12 +23,12 @@ const ROW_STYLE: React.CSSProperties = {
 
 export const Slide10Schedule: React.FC = () => {
   const frame = useCurrentFrame();
-  const {durationInFrames} = useVideoConfig();
+  const { durationInFrames } = useVideoConfig();
   const wrap = envelope(frame, durationInFrames);
 
   return (
     <AbsoluteFill
-      style={{opacity: wrap, background: COLORS.cream, overflow: 'hidden'}}
+      style={{ opacity: wrap, background: COLORS.cream, overflow: 'hidden' }}
     >
       <div
         style={{
@@ -42,7 +42,7 @@ export const Slide10Schedule: React.FC = () => {
         {/* Eyebrow */}
         <Eyebrow
           label="SCENE 10 · FULL SCHEDULE"
-          style={{...fadeUp(frame, 0, 22)}}
+          style={{ ...fadeUp(frame, 0, 22) }}
         />
 
         {/* Title */}
@@ -58,7 +58,7 @@ export const Slide10Schedule: React.FC = () => {
             letterSpacing: '-0.01em',
           }}
         >
-          한눈에 보는 <span style={{color: COLORS.yellowDeep}}>전체 일정</span>.
+          한눈에 보는 <span style={{ color: COLORS.yellowDeep }}>전체 일정</span>.
         </h2>
 
         {/* Schedule table */}
@@ -84,7 +84,7 @@ export const Slide10Schedule: React.FC = () => {
               color: COLORS.cream,
             }}
           >
-            <div style={{background: COLORS.ink, height: '100%', minHeight: 72}} />
+            <div style={{ background: COLORS.ink, height: '100%', minHeight: 72 }} />
             {['PROGRAM', 'DATE', 'HOURS'].map((h) => (
               <div
                 key={h}
