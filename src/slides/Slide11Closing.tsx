@@ -14,7 +14,7 @@ export const Slide11Closing: React.FC = () => {
   const heroColor = frame >= 175 ? COLORS.coral : COLORS.ink;
 
   const vbsY = spring({
-    frame: Math.max(0, frame - 145),
+    frame: Math.max(0, frame - 235),
     fps,
     config: {stiffness: 160, damping: 18, mass: 1},
     from: 180,

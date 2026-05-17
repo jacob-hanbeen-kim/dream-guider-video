@@ -33,7 +33,7 @@ export const SLIDE_DURATIONS = [
   240, // Slide 08: 8s  — Substitute Teacher
   210, // Slide 09: 7s  — Event Helper
   270, // Slide 10: 9s  — Schedule Summary
-  210, // Slide 11: 7s  — Closing / QR
+  300, // Slide 11: 10s — Closing / QR
 ] as const;
 
-export const TOTAL_FRAMES = SLIDE_DURATIONS.reduce((a, b) => a + b, 0); // 2670 = 89s
+export const TOTAL_FRAMES = SLIDE_DURATIONS.reduce((a, b) => a + b, 0); // 2760 = 92s
