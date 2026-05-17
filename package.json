@@ -4,7 +4,8 @@
   "description": "새한 썸머 아카데미 드림 가이더 모집 영상",
   "scripts": {
     "start": "remotion studio",
-    "render": "remotion render DreamGuider out/dream-guider.mp4 --codec=h264"
+    "render": "remotion render DreamGuider out/dream-guider.mp4 --codec=h264",
+    "render:prores": "remotion render DreamGuider out/dream-guider.mov --codec=prores"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
